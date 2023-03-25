@@ -51,7 +51,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'is_a
     Route::post('update', 'ServicesController@skillupdate')->name('servicesSkill.update');
   });
 
-  // main skill sesction  Skill.store
+  // main skill section
   Route::group(['prefix' => 'skill' ], function(){
     Route::get('/index', 'SkillsController@index')->name('skill.index');
     Route::post('/update', 'SkillsController@update')->name('mainSkill.update');
@@ -63,6 +63,21 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'is_a
     Route::get('delete/{id}', 'SkillsController@destroy')->name('skills.delete');
     Route::get('edit/{id}', 'SkillsController@edit');
     Route::post('update', 'SkillsController@skillupdate')->name('skill.update');
+    });
+
+  // main portfolio section
+  Route::group(['prefix' => 'portfolio' ], function(){
+    Route::get('/index', 'PortfolioController@index')->name('portfolio.index');
+    Route::post('/update', 'PortfolioController@update')->name('portfolio.update');
+  });
+
+  // add portfolio 
+  Route::group(['prefix' => 'portfolio' ], function(){
+    Route::get('add', 'PortfolioController@add')->name('Portfolio.add');
+    Route::post('store', 'PortfolioController@store')->name('portfolio.store');
+    Route::get('delete/{id}', 'PortfolioController@destroy')->name('portfolio.delete');
+    Route::get('edit/{id}', 'PortfolioController@edit')->name('portfolio.edit');
+    Route::post('update_list/{id}', 'PortfolioController@singleupdate')->name('portfolio_list.update');
     });
 
 });

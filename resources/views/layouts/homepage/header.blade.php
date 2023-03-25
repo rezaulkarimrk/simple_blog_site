@@ -20,7 +20,7 @@
             </div>
         </div>              
         <div class="img-holder">
-            <img src=">{{$data->image}}" alt="">
+            <img src="{{$data->image}}" alt="">
         </div>      
     </div>  
 </header>

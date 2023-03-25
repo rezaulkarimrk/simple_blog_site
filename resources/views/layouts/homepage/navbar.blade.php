@@ -1,7 +1,10 @@
 <div>
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="{{asset('public/steller')}}/assets/imgs/logo.svg" alt=""></a>
+            @php
+                $data = DB::table('header')->get()->first();
+            @endphp
+            <a class="navbar-brand" href="#"><img src="{{$data->logo}}" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
